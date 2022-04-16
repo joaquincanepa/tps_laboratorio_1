@@ -49,12 +49,12 @@ while(opcion!=0)
 				{
 					precioAerolineasDebito=multiplicar(precioAerolineas,0.9);
 					precioAerolineasCredito=multiplicar(precioAerolineas,1.25);
-					precioAerolineasEnBitcoin=dividir(precioAerolineas,4606954.55);
-					precioUnitarioAerolineas=dividir(precioAerolineas,km);
+					precioAerolineasEnBitcoin=divir(precioAerolineas,4606954.55);
+					precioUnitarioAerolineas=divir(precioAerolineas,km);
 					precioLatamDebito=multiplicar(precioLatam,0.9);
 					precioLatamCredito=multiplicar(precioLatam,1.25);
-					precioLatamEnBitcoin=dividir(precioLatam,4606954.55);
-					precioUnitarioLatam=dividir(precioLatam,km);
+					precioLatamEnBitcoin=divir(precioLatam,4606954.55);
+					precioUnitarioLatam=divir(precioLatam,km);
 					diferencia=calcularDiferencia(precioLatam,precioAerolineas);
 					banderaTercerOp=1;
 					printf("\n Calculos Realizados, ingrese la opcion 4 para ver los resultados!!");

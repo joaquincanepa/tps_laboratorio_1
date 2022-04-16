@@ -55,7 +55,7 @@ float multiplicar(float operador1, float operador2);
  * @param operador2 Este parametro recibe otro numero por copia.
  * @return Este return devuelve el resultado.
  */
-float dividir(float operador1, float operador2);
+float divir(float operador1, float operador2);
 
 
 /**

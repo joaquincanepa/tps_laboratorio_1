@@ -96,12 +96,12 @@ void cargaForzada()
 
 	precioAerolineasDebito=multiplicar(162965,0.9);
 	precioAerolineasCredito=multiplicar(162965,1.25);
-	precioAerolineasEnBitcoin=dividir(162965,4606954.55);
-	precioUnitarioAerolineas=dividir(162965,7090);
+	precioAerolineasEnBitcoin=divir(162965,4606954.55);
+	precioUnitarioAerolineas=divir(162965,7090);
 	precioLatamDebito=multiplicar(159339,0.9);
 	precioLatamCredito=multiplicar(159339,1.25);
-	precioLatamEnBitcoin=dividir(159339,4606954.55);
-	precioUnitarioLatam=dividir(159339,7090);
+	precioLatamEnBitcoin=divir(159339,4606954.55);
+	precioUnitarioLatam=divir(159339,7090);
 	diferencia=calcularDiferencia(159339,162965);
 	printf("\nPrecio Aerolineas: $%d ",162965);
 	mostrarCalculos(precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas );
