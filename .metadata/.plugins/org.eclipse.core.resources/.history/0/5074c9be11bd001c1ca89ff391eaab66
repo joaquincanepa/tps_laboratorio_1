@@ -1,0 +1,103 @@
+/*
+ ============================================================================
+ Name        : TP1_Canepa_Joaquin.c
+ Author      : Cánepa Joaquin.
+ Version     :
+ Copyright   : Your copyright notice
+ Description : 15,347 kilómetros//maximo de km,// minimo= 7,2 kilómetros
+ ============================================================================
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include "calculos.h"
+
+int main(void) {
+	setbuf(stdout, NULL);
+int opcion=-1;
+float km;
+float precioLatam;
+float precioAerolineas;
+int banderaPrimerOp=0;
+int banderaSegundaOp=0;
+int banderaTercerOp=0;
+float diferencia;
+float precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas;
+float precioLatamDebito, precioLatamCredito, precioLatamEnBitcoin, precioUnitarioLatam;
+
+	while(opcion!=0)
+	{
+		opcion=menu();
+		switch(opcion)
+		{
+			case 1:
+				km=pedirYvalidar("\nIngrese los kilometros entre 8 y 16000:",8,16000);
+				banderaPrimerOp=1;
+				break;
+			case 2:
+				if(banderaPrimerOp==1)
+				{
+					precioAerolineas=pedirYvalidar("\nIngrese Precio de vuelos Aerolineas entre 2000 y 500000:",2000,500000);
+					precioLatam=pedirYvalidar("\nIngrese Precio de Latam entre 2000 y 500000:",2000,500000);
+					banderaSegundaOp=1;
+				}
+				else{
+					printf("Error debe ingresar primero los km\n");
+				}
+				break;
+			case 3://calcular costos
+				if(banderaPrimerOp==1 && banderaSegundaOp==1)
+				{
+					precioAerolineasDebito=multiplicar(precioAerolineas,0.9);
+					precioAerolineasCredito=multiplicar(precioAerolineas,1.25);
+					precioAerolineasEnBitcoin=divir(precioAerolineas,4606954.55);
+					precioUnitarioAerolineas=divir(precioAerolineas,km);
+					precioLatamDebito=multiplicar(precioLatam,0.9);
+					precioLatamCredito=multiplicar(precioLatam,1.25);
+					precioLatamEnBitcoin=divir(precioLatam,4606954.55);
+					precioUnitarioLatam=divir(precioLatam,km);
+					diferencia=calcularDiferencia(precioLatam,precioAerolineas);
+					banderaTercerOp=1;
+					printf("\n calculos realizados");
+				}
+				else if(banderaPrimerOp == 1 && banderaSegundaOp == 0)
+				{
+					printf("ERROR: Faltan ingresar los precios de los vuelos.\n");
+				}
+				else if(banderaPrimerOp == 0 && banderaSegundaOp == 1)
+				{
+					printf("ERROR: Faltan ingresar los kilometros.\n");
+				}
+				else{ // si precios y kilometros se ingresaron incorrectamente, aparece el siguiente mensaje de error.
+					printf("ERROR: Faltan ingresar los kilometros y los precios de los vuelos.\n");
+				}
+				break;
+			case 4:
+				if(banderaTercerOp==1)
+				{
+					printf("\nPrecio Aerolineas: $%.2f ",precioAerolineas);
+					mostrarCalculos(precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas );
+					printf("\n\nPrecio Latam: $%.2f", precioLatam);
+					mostrarCalculos(precioLatamDebito,precioLatamCredito,precioLatamEnBitcoin, precioUnitarioLatam );
+					printf("\n\nLa diferencia es: $%.2f ",diferencia);
+					opcion=0;
+				}else{
+					printf("Error debe ingresar primero los km, el precio y calcular los costos\zn");
+				}
+				break;
+			case 5:
+				km=7090;
+				precioAerolineas=162965;
+				precioLatam=159339;
+				printf("Carga forzada de datos completa ");
+				opcion=1;
+				break;
+			case 6:
+				opcion=0;
+				break;
+			default:
+				printf("Error seleccione una opcion del 1 al 6 ");
+				break;
+		}
+	}
+	return 0;
+}
