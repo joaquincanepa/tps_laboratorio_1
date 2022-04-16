@@ -4,12 +4,12 @@
  Author      : Cánepa Joaquin.
  Version     :
  Copyright   : Your copyright notice
- Description :
+ Description : 15,347 kilómetros//maximo de km,// minimo= 7,2 kilómetros
  ============================================================================
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "funciones.h"
+#include "calculos.h"
 
 int main(void) {
 	setbuf(stdout, NULL);
@@ -22,7 +22,7 @@ float diferencia;
 float precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas;
 float precioLatamDebito, precioLatamCredito, precioLatamEnBitcoin, precioUnitarioLatam;
 
-while(opcion!=0)
+	while(opcion!=0)
 	{
 		opcion=menu();
 		switch(opcion)
@@ -112,5 +112,5 @@ while(opcion!=0)
 				break;
 		}
 	}
-		return 0;
+	return 0;
 }

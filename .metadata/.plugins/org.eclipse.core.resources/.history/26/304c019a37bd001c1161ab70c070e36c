@@ -4,12 +4,12 @@
  Author      : Cánepa Joaquin.
  Version     :
  Copyright   : Your copyright notice
- Description :
+ Description : 15,347 kilómetros//maximo de km,// minimo= 7,2 kilómetros
  ============================================================================
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "funciones.h"
+#include "calculos.h"
 
 int main(void) {
 	setbuf(stdout, NULL);
