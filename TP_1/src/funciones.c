@@ -9,14 +9,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * @brief
- *
- * @param texto
- * @param minmimo
- * @param maximo
- * @return
- */
+
+//Esta funcion devuelve la opcion de mi menu.
+int menu()
+{
+	int opcion;
+	printf("\nPor Favor seleccione una opcion del 1 al 6 ");
+	printf("\n1. Ingresar Kilometros \n"
+		   "2. Ingresar Precio de Vuelos\n"
+		   "3. Calcular todos los costos\n"
+		   "4. Informar Resultados\n"
+		   "5. Carga forzada de datos \n"
+		   "6. Salir\n");
+	scanf("%d",&opcion);
+
+	return opcion;
+}
+
+//Esta funcion pide ademas de un char dos numeros, uno minimo y un maximo para poder validar un numero y retornarlo.
 int pedirYvalidar(char texto[],float minmimo, float maximo)
 {
 	int numero;
@@ -33,13 +43,7 @@ int pedirYvalidar(char texto[],float minmimo, float maximo)
 	return numero;
 }
 
-/**
- * @brief
- *
- * @param num1
- * @param num2
- * @return
- */
+//Esta funcion resta dos numeros y te devuelve el resultado.
 float calcularDiferencia(float num1, float num2)
 {
 	float resultado;
@@ -52,13 +56,8 @@ float calcularDiferencia(float num1, float num2)
 	}
 	return resultado;
 }
-/**
- * @brief
- *
- * @param operador1
- * @param operador2
- * @return
- */
+
+//Esta funcion multiplica dos numeros y te devuelve el resutlado.
 float multiplicar(float operador1, float operador2)
 {
 	float resultado;
@@ -66,13 +65,8 @@ float multiplicar(float operador1, float operador2)
 
 	return resultado;
 }
-/**
- * @brief
- *
- * @param operador1
- * @param operador2
- * @return
- */
+
+//Esta funcion simplemente divide dos numeros y te devuelve el resultado.
 float divir(float operador1, float operador2)
 {
 	float resultado;
@@ -80,41 +74,38 @@ float divir(float operador1, float operador2)
 
 	return resultado;
 }
-/**
- * @brief
- *
- * @param debito
- * @param credito
- * @param btc
- * @param precioXkm
- */
+
+//Esta funcion imprime los precios calculados previamente de debito, credito, btc y unitario.
 void mostrarCalculos (float debito, float credito, float btc, float precioXkm )
 {
 	printf(	"\na)Precio con tarjeta de debito: $%.2f"
 			"\nb)Precio con tarjeta de credto: $%.2f"
-			"\nc)Precio pagando con Bitcoin: $%f BTC"
+			"\nc)Precio pagando con Bitcoin: %f BTC"
 			"\nd)Mostrar precio Unitario: $%.2f",debito,credito,btc,precioXkm);
 }
 
-/**
- * @brief
- *
- * @return
- */
-int menu()
+
+
+
+//Esta funcion es exclusivamente para la carga de datos forzada.
+void cargaForzada()
 {
-	int opcion;
-	printf("\nPor Favor seleccione una opcion del 1 al 6 ");
-	printf("\n1. Ingresar Kilometros \n"
-		   "2. Ingresar Precio de Vuelos\n"
-		   "3. Calcular todos los costos\n"
-		   "4. Informar Resultados\n"
-		   "5. Carga forzada de datos \n"
-		   "6. Salir\n");
-	scanf("%d",&opcion);
+	float precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas;
+	float precioLatamDebito, precioLatamCredito, precioLatamEnBitcoin, precioUnitarioLatam;
+	float diferencia;
 
-	return opcion;
+	precioAerolineasDebito=multiplicar(162965,0.9);
+	precioAerolineasCredito=multiplicar(162965,1.25);
+	precioAerolineasEnBitcoin=divir(162965,4606954.55);
+	precioUnitarioAerolineas=divir(162965,7090);
+	precioLatamDebito=multiplicar(159339,0.9);
+	precioLatamCredito=multiplicar(159339,1.25);
+	precioLatamEnBitcoin=divir(159339,4606954.55);
+	precioUnitarioLatam=divir(159339,7090);
+	diferencia=calcularDiferencia(159339,162965);
+	printf("\nPrecio Aerolineas: $%d ",162965);
+	mostrarCalculos(precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas );
+	printf("\n\nPrecio Latam: $%d", 159339);
+	mostrarCalculos(precioLatamDebito,precioLatamCredito,precioLatamEnBitcoin, precioUnitarioLatam );
+	printf("\n\nLa diferencia es: $%.2f ",diferencia);
 }
-
-
-

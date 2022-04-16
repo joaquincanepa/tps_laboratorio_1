@@ -57,7 +57,7 @@ while(opcion!=0)
 					precioUnitarioLatam=divir(precioLatam,km);
 					diferencia=calcularDiferencia(precioLatam,precioAerolineas);
 					banderaTercerOp=1;
-					printf("\n Calculos Realizados!!");
+					printf("\n Calculos Realizados, ingrese la opcion 4 para ver los resultados!!");
 				}
 				else if(banderaPrimerOp==1 && banderaSegundaOp==0)
 				{
@@ -88,20 +88,7 @@ while(opcion!=0)
 				}
 				break;
 			case 5://carga forzada.
-				precioAerolineasDebito=multiplicar(162965,0.9);
-				precioAerolineasCredito=multiplicar(162965,1.25);
-				precioAerolineasEnBitcoin=divir(162965,4606954.55);
-				precioUnitarioAerolineas=divir(162965,7090);
-				precioLatamDebito=multiplicar(159339,0.9);
-				precioLatamCredito=multiplicar(159339,1.25);
-				precioLatamEnBitcoin=divir(159339,4606954.55);
-				precioUnitarioLatam=divir(159339,7090);
-				diferencia=calcularDiferencia(159339,162965);
-				printf("\nPrecio Aerolineas: $%d ",162965);
-				mostrarCalculos(precioAerolineasDebito, precioAerolineasCredito, precioAerolineasEnBitcoin, precioUnitarioAerolineas );
-				printf("\n\nPrecio Latam: $%d", 159339);
-				mostrarCalculos(precioLatamDebito,precioLatamCredito,precioLatamEnBitcoin, precioUnitarioLatam );
-				printf("\n\nLa diferencia es: $%.2f ",diferencia);
+				cargaForzada();
 				opcion=0;
 				break;
 			case 6:
