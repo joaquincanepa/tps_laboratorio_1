@@ -1,6 +1,6 @@
-16:38:24 **** Incremental Build of configuration Debug for project TP_1 ****
+23:35:54 **** Incremental Build of configuration Debug for project trabajo_practico_2 ****
 Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\trabajo_practico_2.o" "..\\src\\trabajo_practico_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funciones.o" "..\\src\\funciones.c" 
-gcc -o TP_1.exe "src\\TP_1.o" "src\\funciones.o" 
-Info: Nothing to build for TP_1
-Info: Nothing to build for TP_1
+gcc -o trabajo_practico_2.exe "src\\arrayPassenger.o" "src\\funciones.o" "src\\trabajo_practico_2.o" 
